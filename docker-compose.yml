@@ -1,10 +1,11 @@
 version: '3'
 services:
-  database:
-    image: 'mongo'
-    container_name: 'my-mongo-container'
-    environment:
-      - MONGO_INITDB_DATABASE=your-database-name
+  back-end:
+    image: ghofranesd/back-end
     ports:
-      - '27017-27019:27017-27019'
+      - 49161:3000
+  front-end:
+    image: ghofranesd/front-end
+    ports:
+      - 49160:3002
 
