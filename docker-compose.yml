@@ -6,7 +6,7 @@ services:
       - 3000:3000
     stdin_open: true
     volumes:
-      - ./:/app
+      - ./frontend:/app
       - /app/node_modules
     container_name: frontend-test
     restart: always 
@@ -19,5 +19,5 @@ services:
     ports:
       - 3002:3002
     volumes:
-      - ./:/app
+      - ./back-end:/app
       - /app/node_modules
