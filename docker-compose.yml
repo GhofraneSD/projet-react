@@ -1,11 +1,23 @@
-version: '3'
-services:
-  back-end:
-    image: ghofranesd/back-end
-    ports:
-      - 49161:3000
-  front-end:
-    image: ghofranesd/front-end
-    ports:
-      - 49160:3002
 
+services:
+  frontend:
+    build: frontend
+    ports:
+      - 3000:3000
+    stdin_open: true
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    container_name: frontend-test
+    restart: always 
+    depends_on:
+      - back-end
+  back-end:
+    container_name: back-end-test
+    restart: always
+    build: back-end
+    ports:
+      - 3002:3002
+    volumes:
+      - ./:/app
+      - /app/node_modules
