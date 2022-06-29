@@ -5,11 +5,11 @@ module.exports = function (app: any) {
         createProxyMiddleware({
             // target: "http://backend1:3002",
             //target: "/",
-            target: "http://localhost:3002",
+            target: "http://back-end:3002",
             changeOrigin: true,
             secure: false,
             logLevel: "info",
             timeout: 40000,
         })
-    );
+    )
 };
