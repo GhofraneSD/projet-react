@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({
     extended:true
 }))
 
-mongoose.connect('mongodb://my-mongo-container:27017/mydb',{
+mongoose.connect('mongodb+srv://Gofrane:tekuptekup@cluster0.rn71x.mongodb.net/test',{
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -40,7 +40,7 @@ app.post("/sign_up",(req,res)=>{
         console.log("Record Inserted Successfully");
     });
 
-    return res.redirect('signup_success.html')
+    return console.log("ok")
 
 })
 
@@ -50,7 +50,7 @@ app.get("/",(req,res)=>{
         "Allow-access-Allow-Origin": '*'
     })
     return res.redirect('index.html');
-}).listen(3000);
+}).listen(3002);
 
 
-console.log("Listening on PORT 3000");
+console.log("Listening on PORT 3002");

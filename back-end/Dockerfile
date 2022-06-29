@@ -1,5 +1,5 @@
 FROM node:16.14.2
-WORKDIR /usr/src/app
+WORKDIR /app
 COPY . .
 RUN npm install
 EXPOSE 3002
